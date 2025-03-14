@@ -1,0 +1,689 @@
+---
+title: "Assignment 2"
+output: pdf_document
+date: "2025-03-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#install.packages("RedditExtractoR")
+library(RedditExtractoR)
+library(openxlsx)
+```
+
+**Keyword: abortion**
+```{r}
+abortion1 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+abortion2 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+abortion3 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+abortion4 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+abortion5 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+abortion6 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+abortion7 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+abortion8 <- find_thread_urls(keywords = "abortion",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: pro-choice**
+```{r}
+pc1 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+pc2 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+pc3 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+pc4 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+pc5 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+pc6 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+pc7 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+pc8 <- find_thread_urls(keywords = "pro-choice",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: pro-life**
+```{r}
+pl1 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+pl2 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+pl3 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+pl4 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+pl5 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+pl6 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+pl7 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+pl8 <- find_thread_urls(keywords = "pro-life",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+**Keyword: fetus**
+```{r}
+fetus1 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+fetus2 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+fetus3 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+fetus4 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+fetus5 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+fetus6 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+fetus7 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+fetus8 <- find_thread_urls(keywords = "fetus",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: baby**
+```{r}
+baby1 <- find_thread_urls(keywords = "baby",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+baby2 <- find_thread_urls(keywords = "baby",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+baby3 <- find_thread_urls(keywords = "baby",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+baby4 <- find_thread_urls(keywords = "baby",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+baby5 <- find_thread_urls(keywords = "baby",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+baby6 <- find_thread_urls(keywords = "baby",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+baby7 <- find_thread_urls(keywords = "baby",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+baby8 <- find_thread_urls(keywords = "baby",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: embryo**
+```{r}
+embryo1 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+embryo2 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+embryo3 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+embryo4 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+embryo5 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+embryo6 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+embryo7 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+embryo8 <- find_thread_urls(keywords = "embryo",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: trimester**
+```{r}
+trimester1 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+trimester2 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+trimester3 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+trimester4 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+trimester5 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+trimester6 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+trimester7 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+trimester8 <- find_thread_urls(keywords = "trimester",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+**Keyword: miscarriage**
+```{r}
+miscarriage1 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+miscarriage2 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+miscarriage3 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+miscarriage4 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+miscarriage5 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+miscarriage6 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+miscarriage7 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+miscarriage8 <- find_thread_urls(keywords = "miscarriage",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: reproductive rights**
+```{r}
+rr1 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+rr2 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+rr3 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+rr4 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+rr5 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+rr6 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+rr7 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+rr8 <- find_thread_urls(keywords = "reproductive rights",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: planned parenthood**
+```{r}
+pp1 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+pp2 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+pp3 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+pp4 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+pp5 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+pp6 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+pp7 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+pp8 <- find_thread_urls(keywords = "planned parenthood",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: pregnant**
+```{r}
+pregnant1 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+pregnant2 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+pregnant3 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+pregnant4 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+pregnant5 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+pregnant6 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+pregnant7 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+pregnant8 <- find_thread_urls(keywords = "pregnant",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: pregnancy**
+```{r}
+pregnancy1 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+pregnancy2 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+pregnancy3 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+pregnancy4 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+pregnancy5 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+pregnancy6 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+pregnancy7 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+pregnancy8 <- find_thread_urls(keywords = "pregnancy",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Keyword: autonomy**
+```{r}
+autonomy1 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "prochoice",
+                         period="day")
+```
+
+```{r}
+autonomy2 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "prolife",
+                         period="day")
+```
+
+```{r}
+autonomy3 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "abortion",
+                         period="day")
+```
+
+```{r}
+autonomy4 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "abortiondebate",
+                         period="day")
+```
+
+```{r}
+autonomy5 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "catholicism",
+                         period="day")
+```
+
+```{r}
+autonomy6 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "politics",
+                         period="day")
+```
+
+```{r}
+autonomy7 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "pregnant",
+                         period="day")
+```
+
+```{r}
+autonomy8 <- find_thread_urls(keywords = "autonomy",
+                         subreddit = "changemyview",
+                         period="day")
+```
+
+
+**Combining**
+```{r}
+combined <- rbind(abortion1, abortion2, abortion3, abortion4, abortion5, abortion6, abortion7, abortion8,
+                  pc1, pc2, pc3, pc4, pc5, pc6, pc7, pc8,
+                  pl1, pl2, pl3, pl4, pl5, pl6, pl7, pl8,
+                  fetus1, fetus2, fetus3, fetus4, fetus5, fetus6, fetus7, fetus8,
+                  baby1, baby2, baby3, baby4, baby5, baby6, baby7, baby8,
+                  embryo1, embryo2, embryo3, embryo4, embryo5, embryo6, embryo7, embryo8,
+                  trimester1, trimester2, trimester3, trimester4, trimester5, trimester6, trimester7, trimester8,
+                  miscarriage1, miscarriage2, miscarriage3, miscarriage4, miscarriage5, miscarriage6, miscarriage7, miscarriage8,
+                  rr1, rr2, rr3, rr4, rr5, rr6, rr7, rr8,
+                  pp1, pp2, pp3, pp4, pp5, pp6, pp7, pp8,
+                  pregnant1, pregnant2, pregnant3, pregnant4, pregnant5, pregnant6, pregnant7, pregnant8,
+                  pregnancy1, pregnancy2, pregnancy3, pregnancy4, pregnancy5, pregnancy6, pregnancy7, pregnancy8,
+                  autonomy1, autonomy2, autonomy3, autonomy4, autonomy5, autonomy6, autonomy7, autonomy8)
+```
+
+
+**Saving**
+```{r}
+# as csv
+write.csv(combined, "3-14.csv", row.names = FALSE)
+```
+
+
